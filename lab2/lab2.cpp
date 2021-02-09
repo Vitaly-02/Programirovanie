@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+//laba 2
 using namespace std;
 void Polozhitelnie() {
     int n;
@@ -15,7 +16,6 @@ void Chisla(int A[], int n) {
     
 
 };
-
 
 int main() {
     int n = 10;
