@@ -31,5 +31,5 @@ double Cosinus(double x) {
 };
 
 int main() {
-	cout << Cosinus(4) << endl;
+	cout << Cosinus(4) << endl << cos(4);
 }
