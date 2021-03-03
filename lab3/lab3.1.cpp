@@ -18,7 +18,7 @@ void PrintMas(int* P, int size) {
     for (int i = 0; i < size; i++)
         cout << P[i] << " ";
     cout << endl;
-};
+}
 
 int main() {
     srand(time(NULL));
@@ -43,7 +43,15 @@ int main() {
     int* Poloz; 
     int* Otric;
     Poloz = (int*)malloc(poloz * sizeof(int));
+    if (Poloz == NULL) {
+        printf("Error pizdec 2");
+        return 2;
+    }
     Otric = (int*)malloc(otric * sizeof(int));
+    if (Otric == NULL) {
+        printf("Error pizdec 3");
+        return 3;
+    }
     int j = 0, k = 0;
     for (int i = 0; i < size; i++) {
         if (Mas[i] < 0) {
@@ -57,5 +65,11 @@ int main() {
     }
     PrintMas(Otric, otric);
     PrintMas(Poloz, poloz);
+    free(Mas);
+    Mas = NULL;
+    free(Poloz);
+    Poloz = NULL;
+    free(Otric);
+    Otric = NULL;
     return 0;
 }
