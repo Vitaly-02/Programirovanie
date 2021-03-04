@@ -23,24 +23,36 @@ int main() {
     double* Mas;
     cin >> size;
     Mas = new double[size];
+    if (Mas == NULL) {
+        printf("Error pizdec");
+        return 1;
+    }
     RandomMas(Mas, size, -10, 10);
     PrintMas(Mas, size);
-    int* Points;
-    Points = new int[size];
+    double **Points;
+    Points = new double*[size];
+    if (Points == NULL) {
+        printf("Error pizdec 2");
+        return 2;
+    }
+    
     for (int i = 0; i < size; i++) {
         Points[i] = &Mas[i];
     }
 
     for (int i = 0; i < size - 1; i++) {
         for (int j = size - 1; j > i; j--) {
-            if (*&Points[j] < *&Points[j - 1]) {
+            if (*Points[j] < *Points[j - 1]) {
                 swap(Points[j], Points[j - 1]);
             }
         }
     }
 
     for (int i = 0; i < size; i++) {
-        cout << Points[i] << " ";
-    }
+        cout << *Points[i] << " ";
+    } 
+
+    delete Mas;
+    delete Points;
     return 0;
 }
