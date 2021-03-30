@@ -64,8 +64,8 @@ int main() {
         }
     }
     int a = 0, b = 0;
-    for (int i = 1; i < n; i++) {
-        for (int j = 1; j < m; j++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 1; j < m; j++) { //1 or 0?
             if (B[a][b] < B[i][j]) {
                 a = i;
                 b = j;
