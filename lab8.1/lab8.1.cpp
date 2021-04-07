@@ -6,8 +6,8 @@ using namespace std;
 
 struct School { int number; int graduated; int students; } S;
 
-int random(int N) {
-    return rand() % N + 1;
+int random(int a, int b) {
+    return a + rand() % (b - a + 1); //rand() % N + 1;
 }
 
 void FillInc(int A[], int N) {
@@ -38,11 +38,12 @@ void BubbleSort(School Massive[], int Index[], int size) {
 }
 
 int main() {
-    //srand(time(NULL));
+    srand(time(NULL));
     const int n = 4;
     struct School Massive[n];
     for (int i = 0; i < n; i++) {
-        Massive[i] = { random(99), random(120), random(90) };
+        int g = random(10, 120);
+        Massive[i] = { random(1, 99), g, random(10, g) };
         cout << Massive[i].number << " " << Massive[i].graduated << " " << Massive[i].students << endl;
     }
     int Index[n];
