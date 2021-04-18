@@ -80,23 +80,23 @@ int main() {
     FillInc(A, 100);
     InsertSort(A, 100);
     PrintMas(A, 100);
-    cout << endl << "Moves = " << Moves << " Compares = " << Compares << "\n\n";
+ //   cout << endl << "Moves = " << Moves << " Compares = " << Compares << "\n\n";
     int B[1000];
     FillInc(B, 1000);
     InsertSort(B, 1000);
     PrintMas(B, 1000);
-    cout << endl << "Moves = " << Moves << " Compares = " << Compares << "\n\n";
+ //   cout << endl << "Moves = " << Moves << " Compares = " << Compares << "\n\n";
 
-    BSearch(A, 100, 8);
+    BSearch(A, 100, 1);
     cout << "Binary search Compares = " << Compares << "\n\n";
 
-    Search(A, 100, 8);
+    Search(A, 100, 1);
     cout << "Default search Compares = " << Compares << "\n\n";
     
-    BSearch(B, 1000, 8);
+    BSearch(B, 1000, 1);
     cout << "Binary search Compares = " << Compares << "\n\n";
 
-    Search(B, 1000, 8);
+    Search(B, 1000, 1);
     cout << "Default search Compares = " << Compares << "\n\n";
 
 	

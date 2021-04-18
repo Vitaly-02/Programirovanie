@@ -64,8 +64,8 @@ int main() {
             m++;
         }
     }
-    cout << endl << m << endl << str << endl;
-    
+// cout << endl << m << endl << str << endl;
+    cout << endl;
     while (m % k != 0) {
         B[str - 1][j] = 0;
         m++;
