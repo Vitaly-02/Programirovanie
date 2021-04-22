@@ -54,15 +54,31 @@ struct list {
         node* p = head;
         
         while (p) {
+            node* temp;
+            if (p->next == nullptr) {
+                temp = p;
+                swap(p, p->next);
+                swap(p->next->next, temp);
+                swap(temp, p);
+                p = nullptr;
+                p->next = tail;
+            }
             if (p == head) {
-                if (p->data.name > p->next->data.name) {
+                if (p->data.name[0] > p->next->data.name[0]) {
                     head = p->next;
+                    temp = p;
                     swap(p, p->next);
+                    swap(p->next->next, temp);
+                    swap(temp, p);
                 }
             }
             else {
-                if (p->data.name > p->next->data.name) {
+                node* temp;
+                if (p->data.name[0] > p->next->data.name[0]) {
+                    temp = p;
                     swap(p, p->next);
+                    swap(p->next->next, temp);
+                    swap(temp, p);
                 }
             }
         }
